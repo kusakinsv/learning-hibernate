@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ru.one.learning.hibernate.entity.Developer" table="HIBERNATE_DEVELOPERS">
+        <meta attribute="class-description">
+            This class contains developerXML's details.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="increment"/>
+<!--            <generator class="sequence">-->
+<!--            <param name="sequence">HIBERNATE_DEVELOPERS_seq</param>-->
+<!--            </generator>-->
+        </id>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="specialty" column="SPECIALTY" type="string"/>
+        <property name="experience" column="EXPERIENCE" type="int"/>
+    </class>
+</hibernate-mapping>

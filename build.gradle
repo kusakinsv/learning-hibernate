@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.one.learning'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor ("org.projectlombok:lombok:1.18.22")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'org.hibernate.orm:hibernate-core:6.0.0.Beta3'
+    implementation 'javax.transaction:jta:1.1'
+    implementation 'javax.el:javax.el-api:3.0.1-b06'
+//    implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
+    implementation 'org.postgresql:postgresql:42.3.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//sourceCompatibility = '1.8' //java 8
+//targetCompatibility = '1.8'
+sourceCompatibility = '11' //java 11
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+jar { //собирает проект одним jar
+    archiveBaseName = 'hiber'
+
+    manifest {
+        attributes 'Main-Class': 'ru.one.learning.MainApplication'  }
+
+    dependsOn configurations.runtimeClasspath
+
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}

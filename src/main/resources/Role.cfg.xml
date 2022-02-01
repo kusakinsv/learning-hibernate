@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">-->
+<hibernate-mapping>
+    <class name="ru.one.learning.hiber.Role" table="roles"> <!-- Имя класса к таблице -->
+        <id name="id" column="id">       <!-- id - Первичный ключ -->
+            <generator class="native"/>         <!-- Генерация первичного ключа -->
+        </id>
+        <property name="title" column="title" type="string"/> <!-- маппинг полей с колонками -->
+
+        <many-to-one name="role" class="ru.one.learning.hiber.Role"></many-to-one>
+    </class>
+
+
+</hibernate-mapping>

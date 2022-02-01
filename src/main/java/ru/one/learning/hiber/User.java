@@ -17,6 +17,8 @@ public class User implements Serializable {
 
     private String lastname;
 
+    private Role role;
+
     public User() {
     }
 

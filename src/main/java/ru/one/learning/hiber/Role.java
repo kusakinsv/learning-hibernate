@@ -1,10 +1,14 @@
 package ru.one.learning.hiber;
 
+import java.util.Set;
+
 public class Role {
 
     private long id;
 
     private String title;
+
+    Set<User> users;
 
     public Role() {
     }
@@ -23,5 +27,13 @@ public class Role {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

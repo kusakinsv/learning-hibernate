@@ -12,5 +12,6 @@
         <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property> <!-- показывает sql команды в консоли-->
         <mapping resource="User.cfg.xml"/>
+        <mapping resource="Role.cfg.xml"/>
     </session-factory>
 </hibernate-configuration>

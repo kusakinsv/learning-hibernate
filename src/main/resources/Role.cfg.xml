@@ -10,7 +10,12 @@
         </id>
         <property name="title" column="title" type="string"/> <!-- маппинг полей с колонками -->
 
-        <many-to-one name="role" class="ru.one.learning.hiber.Role"></many-to-one>
+        <set name="users" table="users">
+                    <key>
+                        <column name="role_id" not-null="true"/>
+                    </key>
+                    <one-to-many class="ru.one.learning.hiber.User"/>
+                </set>
     </class>
 
 

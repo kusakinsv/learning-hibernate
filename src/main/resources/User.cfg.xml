@@ -11,6 +11,8 @@
         <property name="firstname" column="first_name" type="string"/> <!-- маппинг полей с колонками -->
         <property name="lastname" column="last_name" type="string"/>
         <property name="age" column="age" type="int"/> <!-- Каждое имя класса ассоциируем с таблицей-->
+        <one-to-one name="role" class="ru.one.learning.hiber.Role"/>
+
     </class>
 
 

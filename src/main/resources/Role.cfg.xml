@@ -10,8 +10,7 @@
         </id>
         <property name="title" column="title" type="string"/> <!-- маппинг полей с колонками -->
 
-        <many-to-one name="role" class="ru.one.learning.hiber.Role"></many-to-one>
+<one-to-one name="user" class="ru.one.learning.hiber.User"/>
+
     </class>
-
-
 </hibernate-mapping>

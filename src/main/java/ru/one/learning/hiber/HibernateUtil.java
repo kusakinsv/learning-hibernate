@@ -10,10 +10,7 @@ public class HibernateUtil {
 
     static {
         Configuration config = new Configuration().configure();
-        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-                .applySettings(config.getProperties());
-
-        sessionFactory = config.buildSessionFactory(builder.build());
+        sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
     public static SessionFactory getSessionFactory() {

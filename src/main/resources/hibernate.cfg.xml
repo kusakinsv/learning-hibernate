@@ -10,6 +10,7 @@
         <property name="hibernate.connection.username">admin</property>
         <property name="hibernate.connection.password">123450000</property>
         <property name="hbm2ddl.auto">create</property>
-        <mapping resource="User.cfg.xml" />
+        <property name="show_sql">true</property> <!-- показывает sql команды в консоли-->
+        <mapping resource="User.cfg.xml"/>
     </session-factory>
 </hibernate-configuration>

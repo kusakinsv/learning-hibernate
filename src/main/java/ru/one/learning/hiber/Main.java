@@ -1,5 +1,6 @@
 package ru.one.learning.hiber;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 public class Main {

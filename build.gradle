@@ -14,10 +14,7 @@ dependencies {
     annotationProcessor ("org.projectlombok:lombok:1.18.22")
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    implementation 'org.hibernate.orm:hibernate-core:6.0.0.Beta3'
-    implementation 'javax.transaction:jta:1.1'
     implementation 'javax.el:javax.el-api:3.0.1-b06'
-//    implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
     implementation 'org.postgresql:postgresql:42.3.1'
 }
 

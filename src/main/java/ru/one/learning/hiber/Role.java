@@ -1,11 +1,10 @@
 package ru.one.learning.hiber;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,6 +17,9 @@ public class Role {
 
     @Column(name = "title")
     private String title;
+
+    @OneToMany(mappedBy = "role")
+    private Set<User> users;
 
     public Role() {
     }

@@ -6,12 +6,16 @@
 <hibernate-mapping>
     <class name="ru.one.learning.hiber.User" table="users"> <!-- Имя класса к таблице -->
         <id name="id" column="id">       <!-- id - Первичный ключ -->
-        <generator class="native"/>         <!-- Генерация первичного ключа -->
+            <generator class="native"/>         <!-- Генерация первичного ключа -->
         </id>
         <property name="firstname" column="first_name" type="string"/> <!-- маппинг полей с колонками -->
         <property name="lastname" column="last_name" type="string"/>
         <property name="age" column="age" type="int"/> <!-- Каждое имя класса ассоциируем с таблицей-->
-        <one-to-one name="role" class="ru.one.learning.hiber.Role"/>
+
+        <set name="roles" table="users_roles">
+            <key column="user_id"/>
+            <many-to-many column="role_id" class="ru.one.learning.hiber.Role"/>
+        </set>
 
     </class>
 

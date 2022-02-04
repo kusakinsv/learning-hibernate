@@ -1,5 +1,6 @@
 package ru.one.learning.hiber;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Role {
@@ -8,7 +9,7 @@ public class Role {
 
     private String title;
 
-    private User user;
+    private Set<User> users;
 
     public Role() {
     }
@@ -29,11 +30,11 @@ public class Role {
         this.title = title;
     }
 
-    public User getUser() {
-        return user;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

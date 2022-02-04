@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -17,7 +18,7 @@ public class User implements Serializable {
 
     private String lastname;
 
-    private Role role;
+    private Set<Role> roles;
 
     public User() {
     }

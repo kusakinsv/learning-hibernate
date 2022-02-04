@@ -10,7 +10,11 @@
         </id>
         <property name="title" column="title" type="string"/> <!-- маппинг полей с колонками -->
 
-<one-to-one name="user" class="ru.one.learning.hiber.User"/>
+        <set name="users" table="users_roles">
+            <key column="role_id" />
+            <many-to-many column="user_id" class="ru.one.learning.hiber.User"/>
+        </set>
+
 
     </class>
 </hibernate-mapping>

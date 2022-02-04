@@ -24,7 +24,8 @@ public class User implements Serializable {
 
     private String lastname;
 
-    @ManyToOne
+    @OneToOne
+    @PrimaryKeyJoinColumn
     @JoinColumn(name = "roles_id")
     private Role role;
 

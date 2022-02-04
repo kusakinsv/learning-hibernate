@@ -18,9 +18,6 @@ public class Role {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(mappedBy = "role")
-    private Set<User> users;
-
     public Role() {
     }
 }

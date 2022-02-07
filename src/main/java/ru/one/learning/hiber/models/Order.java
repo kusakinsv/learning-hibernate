@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "order")
+@Table(name = "[order]")
 public class Order extends Model{
 
     @ManyToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL)

@@ -13,5 +13,8 @@
         <property name="show_sql">true</property> <!-- показывает sql команды в консоли-->
         <mapping class="ru.one.learning.hiber.models.User"/>
         <mapping class="ru.one.learning.hiber.models.Role"/>
+        <mapping class="ru.one.learning.hiber.models.Product"/>
+        <mapping class="ru.one.learning.hiber.models.ProductCategory"/>
+        <mapping class="ru.one.learning.hiber.models.Order"/>
     </session-factory>
 </hibernate-configuration>

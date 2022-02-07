@@ -1,4 +1,4 @@
-package ru.one.learning.hiber;
+package ru.one.learning.hiber.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,10 +10,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "roles")
-public class Role {
-    @Id
-    @Column(name = "id")
-    private long id;
+public class Role extends Model {
 
     @Column(name = "title")
     private String title;
@@ -22,5 +19,6 @@ public class Role {
     private Set<User> users;
 
     public Role() {
+        super();
     }
 }

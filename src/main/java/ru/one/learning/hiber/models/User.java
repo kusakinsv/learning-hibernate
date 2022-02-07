@@ -1,4 +1,4 @@
-package ru.one.learning.hiber;
+package ru.one.learning.hiber.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,12 +11,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 11)
-    private long id;
+public class User extends Model {
 
     @Column(name = "age")
     private int age;
@@ -32,9 +27,6 @@ public class User implements Serializable {
     private Set<Role> roles;
 
     public User() {
-    }
-
-    public User(long id) {
-        this.id = id;
+        super();
     }
 }

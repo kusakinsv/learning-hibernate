@@ -4,13 +4,13 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!--        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">-->
 <hibernate-mapping>
-    <class name="ru.one.learning.hiber.Role" table="roles"> <!-- Имя класса к таблице -->
+    <class name="ru.one.learning.hiber.models.Role" table="roles"> <!-- Имя класса к таблице -->
         <id name="id" column="id">       <!-- id - Первичный ключ -->
             <generator class="native"/>         <!-- Генерация первичного ключа -->
         </id>
         <property name="title" column="title" type="string"/> <!-- маппинг полей с колонками -->
 
-<one-to-one name="user" class="ru.one.learning.hiber.User"/>
+<one-to-one name="user" class="ru.one.learning.hiber.models.User"/>
 
     </class>
 </hibernate-mapping>

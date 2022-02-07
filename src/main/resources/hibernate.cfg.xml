@@ -11,7 +11,7 @@
         <property name="hibernate.connection.password">123450000</property>
         <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property> <!-- показывает sql команды в консоли-->
-        <mapping class="ru.one.learning.hiber.User"/>
-        <mapping class="ru.one.learning.hiber.Role"/>
+        <mapping class="ru.one.learning.hiber.models.User"/>
+        <mapping class="ru.one.learning.hiber.models.Role"/>
     </session-factory>
 </hibernate-configuration>

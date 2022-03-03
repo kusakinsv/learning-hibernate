@@ -1,9 +1,12 @@
 package ru.one.learning.hiber.models;
 
-import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "[order]")
 public class Order extends Model{

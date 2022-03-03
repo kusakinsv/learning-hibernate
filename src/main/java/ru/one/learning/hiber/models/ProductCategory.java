@@ -1,18 +1,12 @@
 package ru.one.learning.hiber.models;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.HashSet;
+import javax.persistence.*;
 import java.util.Set;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "product_category")
 public class ProductCategory extends Model {
-
+    @Column(name = "title")
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -20,7 +14,7 @@ public class ProductCategory extends Model {
     private ProductCategory parentProductCategory;
 
     @OneToMany(mappedBy = "productCategory")
-    private Set<Product> products = new HashSet<>();
+    private Set<Product> products;
 
     public ProductCategory() {
         super();
@@ -28,5 +22,46 @@ public class ProductCategory extends Model {
 
     public ProductCategory(Long id) {
         super(id);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public ProductCategory getParentProductCategory() {
+        return parentProductCategory;
+    }
+
+    public void setParentProductCategory(ProductCategory parentProductCategory) {
+        this.parentProductCategory = parentProductCategory;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    public ProductCategory(String title) {
+        this.title = title;
+    }
+
+    public ProductCategory(Long id, String title) {
+        super(id);
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "ProductCategory (title=%s)"
+                        , this.title);
+
     }
 }

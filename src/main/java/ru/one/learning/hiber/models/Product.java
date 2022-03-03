@@ -1,9 +1,9 @@
 package ru.one.learning.hiber.models;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 @Getter
 @Setter
@@ -12,9 +12,11 @@ import java.math.BigDecimal;
 public class Product extends Model {
 
     private String title;
+
+    @Column(name = "[description]")
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "product_category_id", referencedColumnName = "id")
     private ProductCategory productCategory;
 
@@ -28,4 +30,9 @@ public class Product extends Model {
         super();
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "Product (title=%s, description=%s, price=%s)", this.title, this.description, this.price);
+    }
 }

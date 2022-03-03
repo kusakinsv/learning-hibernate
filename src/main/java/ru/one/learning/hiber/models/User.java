@@ -1,16 +1,16 @@
 package ru.one.learning.hiber.models;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "[user]")
 public class User extends Model {
 
     @Column(name = "age")
@@ -24,7 +24,7 @@ public class User extends Model {
     @JoinTable(name = "user_role",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
         super();
